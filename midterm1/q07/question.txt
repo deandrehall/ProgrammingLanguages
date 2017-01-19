@@ -1,0 +1,31 @@
+Suppose we have a Animal base class and a Dog derived class.
+Also suppose we have a method
+
+public void workWithListOfAnimals(List<Animal> animals) {
+ //...
+}
+
+If we try to call
+
+List<Dog> dogs = new ArrayList<Dog>();
+dogs.add(...);
+...
+workWithListOfAnimals(dogs);
+
+in most languages that support generics we get a compiler error on this call to workWithListOfAnimals.
+
+Discuss and explain either in favor of or against this error.
+
+
+
+In this example, there is a compiler error because the derived
+type (dogs) is being treated as the base type (animals) for use in
+the workWithListOfAnimals method. [Venkat: That's not true, it's the list of derived type that's being treated as a list of base type.] This would be an example of
+covariance, but generics and coveriance are not the same. [Venkat: Sure, but the real point is they don't go well together.] Allowing
+derived types to be used as base type objects can cause issues
+in cases where the derived objects are assigned to base objects. [Venkat: This is not true, it is critical to say list of... otherwise the statement is misleading and not true.]
+In the example here, allowing the dog object to be used in place
+of the animal object could cause issues if the expected object was a snake but dogs were recieved instead.
+
+Total [10]: -5
+This was in the video and there was a quiz about it. The code will fail Liskov's substitution principle if allowed. Nothing to do with base vs. derived, but it is about list of base vs. list of derived.

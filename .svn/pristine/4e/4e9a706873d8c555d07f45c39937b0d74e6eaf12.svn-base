@@ -1,0 +1,8 @@
+How is it possible for languages to support infinite sequences?
+
+languages are able to support infiinte sequences by using lazy
+evaluation. By delaying the valuation of an expression, you could create
+a list of infinite size without worring about the size of the value. A
+In the example of the infinite list of fibonacci number, calculating the
+nth term would only require the evalution of the first n values instead
+of the entire infinite list of values.

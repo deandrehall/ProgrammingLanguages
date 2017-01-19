@@ -1,0 +1,20 @@
+What are partially applied functions? Give examples. What's the benefit of 
+using them? Give examples.
+
+Partially applied functions is when the function does not pass the arguments for all the parameters that is defined by the function. 
+
+The benefit is that you can eliminate repetitive passing of variables into the function by passing the common variables into the function in order to create a new function that is preloaded with those variables then using the new function by passing only the unique variables that it needs. 
+
+Example: 
+def compute(number : Int, power : Int) = {
+scala.Math.pow(number, power)
+}
+println(compute(3,2))
+println(compute(5,2))
+
+Can get rid of passing 2 all the time with partially applied functions.
+
+def square = compute(_ : Int, 2)
+
+
+Total [10]: -2 Long sentence, lost track of what is being said in there, not sure.

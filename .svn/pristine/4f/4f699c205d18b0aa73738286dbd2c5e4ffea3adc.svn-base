@@ -1,0 +1,17 @@
+Dynamic typing is the same as type inference. Discuss in favor or against that statement and provide examples to strengthen your arguments
+
+This is false. Type inference is set once and it is set at compile time. However, dynamic typing is not fixed and the type can be changed at runtime. 
+
+Example 
+
+var value = 1
+Println(value)
+// error below since value has already been inferenced as a int. 
+value = "hello"
+Println(value)
+
+However, you could do this in a dynmaically typed lanugae like python.
+value = 1
+print(value)
+value = "hello"
+print(value)

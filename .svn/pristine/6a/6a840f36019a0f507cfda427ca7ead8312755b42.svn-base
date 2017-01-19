@@ -1,0 +1,34 @@
+HW3: Due 11:59PM October 21
+1. What is a DSL? Give some examples.
+
+DSL stands for Domain Specific Language and it is suitable for solving problems within a specific domain. A benefit of DSLs is creating a language that users can easily understand in less time, and spend more time writing code that does what they want. DSLs are also designed with domain experts in mind and because DSLs are simple, concise, and expressive, they can help users be more productive than they would using a general-purpose language. 
+An example of this is a DSL written to perform statistical analysis. The users of the DSL would likely be well versed in statistics, but the DSL would allow them to perform calculations or solve problems in a way that is more concise and idiomatic to them than if they were using a general-purpose language.
+
+2. What's the difference between an external DSL and an internal DSL? Give examples to compare.
+
+External DSLs can be designed using any language. The benefit of an external DSL is you design it the way you want to fit your domain, thus giving you a lot of flexibility. The downside of this is it requires a lot of work as it takes time to create the things you need, like the parser and defining the grammar for the language. An example of an external DSL would be CSS, which allows for the customization of web pages. CSS is not restricted to any one language, as it can be applied to documents written in markup languages such as HTML and XML. 
+
+An internal DSL is designed using a host language. The benefit of using a host language is you do not have to worry about creating the parser and grammar for the DSL as it is already provided, thus saving you time and work. However, the downside is that you are constrained by the host language. Another downside to using an internal DSL is that it is quite difficult to validate syntax you add to the language. Rake is an example of an internal DSL as is built on top of the language Ruby. Not only does Rake use Ruby syntax, it is also part of the standard Ruby library.
+
+3. What are some of the essential things a language should have in order to serve as a host language for creating internal DSLs? Explain with examples.
+
+There are two essential things the host language needs for creating an internal DSL. One requirement of the host language is fluency. The host language must also have support for metaprogramming.
+
+If a language can forego syntax such as ; and () or even dots, then this permits for a fluent DSL. A fluent DSL allows users to quickly and easily understand the DSL they are working with. An example of a non-fluent and fluent code would be, car.drive(10) and car drive 10. The second piece of code is very easy to understand what is going on compared to the first, because it looks more like data than code. 
+
+In order for a language to server at a host language, it must support metaprogramming. This allows the DSL to have the flexibility to be dynamic. An example of metaprogramming would be implementing methods to classes during runtime with ease.
+
+Languages like Scala which have type inference and relaxed syntax are tools that can be used to reduce the overall ceremony when writing code. Type inference allows for the omission of types when declaring variable. This leads to code that is more concise by having the language infer the typing at compile time. The relaxed syntax of a language such as Ruby makes it very fluent, in that Ruby require very little ceremony to perform the same actions of a language like Java which has high levels of ceremony. These attributes increase the overall fluency of the host language used for the DSL.
+
+Method synthesis in groovy allows for methods which don't exist to be handled dynamically at runtime. MethodMissing makes use of metaprogramming by allowing for the handling of methods not available to a class by providing a catch all for situations when that method is not available. Take this code in Groovy as an example, String.metaClass.hello = {-> 'Hello' }. This line of code adds a hello method to the metaclass of String. One line of code is all it takes to be able to add methods dynamically with ease at runtime.
+
+Groovy has a tool that provides an internal DSL for building XML called MarkupBuilder.
+bldr = new groovy.xml.MarkupBuilder()
+bldr.languags{
+   langs.each {k, v ->
+	languaes(name:k){author(v) }
+   }
+}
+This is all the code you need to build XML using the internal DSL MarkupBuilder library that is built in Groovy. 
+
+Total [10]:

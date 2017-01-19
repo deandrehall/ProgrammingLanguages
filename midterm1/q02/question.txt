@@ -1,0 +1,9 @@
+Is the following function pure or impure? Support your answer with good reasoning.
+
+//Pseudocode
+function contractEndDate(days) {
+  return System.getToday() + days
+}
+
+This is not a pure function. A pure function will always return a same result, given the same parameter, as well as not producing any side effects and not depend on any external mutable states. The function will not always return the same value because System.getToday() will return a different value depending on the day. Thus, the function will return different values each day you call it.
+

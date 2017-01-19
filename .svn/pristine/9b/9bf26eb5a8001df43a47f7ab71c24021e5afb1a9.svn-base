@@ -1,0 +1,57 @@
+Assign1 Due 11:59PM September 16th
+
+For this assignment we will use three different languages. One has to be a statically typed language. One has to be a dynamically typed language. A third is your choice. Do not pick two languages that are too similar to each other.
+
+In each of the language, create one or more functions to compute the Fibonacci series. Given a position, where position is > 0, the functions will produce a series up to that position. For example, given position 6, it will produce a series of values 1, 1, 2, 3, 5, 8. 
+
+If you choose a language that permits mutability, write one of the functions to use an iterative solution using mutability. In addition, write a function that's also iterative, but honors total immutability. Then write a function that uses recursion.
+
+For each language, create code with appropriate extensions. Create a build file, a sh, or a cmd file that will compile (if necessary) and run the code. In other words, but running the build file, we should be able to see the results without having to manually key in the compile/run commands.
+
+Keep the code for different languages in different subdirectories under assign1.
+
+Suggestion: Start with one language. Write the code in that language, evolve it using reviews. Once you've completed code in one language (and gotten a satisfactory review), then create in another language.
+
+After completing the coding (and only after that), answer the following questions:
+
+1. Discuss some of the things you have learned from working on this assignment.
+
+We learned a lot of useful of things while working on this assignment. The first thing right off the bat that we learned was how to make a build.sh file. Me and my partner have never done something like this and now we know how to make one, which allows us the benefit of easily sending the console arguments in for quick testing or compiling our code. Another thing we learned how to write code with immutability in mind. We learned the benefits of writing immutable code, which is writing cleaner code and avoiding side effects.
+ We learned about lambdas/function literals and their benefits, such as writing an inline function so you don’t have to write a whole function for a simple one-line expression.
+Brian has not coded in python and learned some of the dynamic style that comes with Python. I have never coded in a dynamic type language so it was interesting not having to type out the types for each variable and seeing the code run and crash during run time and not compile time.
+We learned some of the syntax for Go such as creating functions, list, printing to the console, and the command arguments.
+
+2. Where there anything that surprised you or things that you did not expect.
+
+We were surprised on how hard it is to get out of the mindset of not mutating variables. We both had only worked with mutating variables when we coded and never had any knowledge or experience coding in a functional style. So, it took us quite
+a while of researching and learning how to avoid mutating variables for our assignment. It was also surprising to see how quickly we were able to pick up new languages. Brian had never used Python and neither of us had ever used Go, but we were 
+able to pick them both of fairly quickly. The code written in those languages might not be idiomatic, but that can be improved as we work with those languages more. Although C++ was the language we were both most familiar with, it proved to be the most difficult for us to work with, especially the immutable iterative function. Python was the language we felt that we progressed the fastest with. We actually had all 3 functions done in one day, with only fairly minor corrects to be made after the reviews. Go was very difficult to work with initially as neither of us had ever worked with it before, but after learning how things worked it was fairly enjoyable to work with.
+
+3. Given this experience, draw a comparison of the three languages used.
+
+Both C++ and Go are static languages, and does not really support functional style, while Python is a dynamic type language and does support functional style coding. Python and GO are strongly type languages and C++ is a weak type language. We found that writing the mutable and recursion functions in all three languages where pretty similar, even with the syntactically differences. Python and C++ both have internal iterators such reduce and maps, while Go did not have these things. Out of all the three languages, we wrote the least amount of code for Python and wrote the most for C++. This may be because C++ is a statically typed language, so we had to specify the types for the variables which is not necessary in Python. Since Python supports functional programming, we had to write less code for the immutable function. Since C++ and Go does not truly support function programming, we had to write more code in order to work around the limitations of the language.
+
+Total [100]: 90
+
+Python [30]:
+Mutable version:
+Immutable version:
+Recursive version:
+
+C++ [30]:
+Mutable version:
+Immutable version:
+Recursive version:
+
+Go [30]:
+Mutable version:
+Immutable version: -10
+series = []int{1,1}
+
+for i := 2; i < position; i++{
+	series = next_series(series) // here the series variable is being mutated
+}
+
+Recursive version:
+
+Details in assign1.txt [10]: 

@@ -1,0 +1,106 @@
+[Venkat 11/03/16 05:30 AM MDT]
+synopsis: run failed 
+
+details:
+> ./build.sh 
+amazon_scraper.rb:28:in `get_title_and_rank_for_isbn': undefined method `slice!' for nil:NilClass (NoMethodError)
+	from amazon_scraper.rb:13:in `block in get_title_and_rank_for_all_isbns'
+	from amazon_scraper.rb:13:in `map'
+	from amazon_scraper.rb:13:in `get_title_and_rank_for_all_isbns'
+	from amazon_scraper.rb:83:in `block in <main>'
+	from amazon_scraper.rb:76:in `compute_time'
+	from amazon_scraper.rb:83:in `<main>'
+
+------------------------------------------------------------------------------
+[Venkat 11/02/16 05:42 AM MDT]
+synopsis: reduce code 
+
+details:             
+Remove stuff that does not add value.
+
+------------------------------------------------------------------------------
+[Venkat 11/01/16 05:05 AM MDT]
+synopsis: let's remove duplication 
+
+details:                          
+See notes in code.
+
+------------------------------------------------------------------------------
+[Venkat 10/31/16 01:47 AM EDT]
+synopsis: let's remove duplication 
+
+details:                          
+See common code repeated multiple times. Let's remove that duplication while keeping the different parts separate.
+
+Giving a blank line in the output between versions will make it easier to read the output and not have to scan every line looking for where one ends and the next starts. Please care about readability of what we create.
+
+------------------------------------------------------------------------------
+[Venkat 10/30/16 09:27 AM EDT]
+synopsis: good so far 
+
+details:             
+Good so far. 
+
+Explore another option which provides parallel execution but without locks.
+
+------------------------------------------------------------------------------
+[Venkat 10/29/16 04:43 AM EDT]
+synopsis: avoid duplicating code 
+
+details:                        
+Please see notes in code.
+
+------------------------------------------------------------------------------
+[Venkat 10/28/16 05:16 AM EDT]
+synopsis: not much difference in performance, revisit 
+
+details:                                             
+The concurrent run takes about the same time as the sequential run.
+In the concurrent solution, the calls to the Amazon page do not have to go one at a time. They can go concurrently. When the response arrives and we get ready to push the data to the list/array is when we need to synchronize.
+
+------------------------------------------------------------------------------
+[Venkat 10/27/16 04:46 AM EDT]
+synopsis: good so far 
+
+details:
+Ruby file naming convention: amazonScraper.rb to amazon_scraper.rb
+
+Please format the table so it is easy to read the content.
+
+Please proceed to the next step.
+
+------------------------------------------------------------------------------
+[Venkat 10/26/16 06:24 AM EDT]
+synopsis: getting an error running 
+
+details:
+In Ruby, function names are written as some_function instead of someFunction.
+
+Use a few different isbn numbers in the input file.                                  
+
+> ./build.sh 
+amazonScraper.rb:31:in `getTitleandRankForIsbn': undefined method `slice!' for nil:NilClass (NoMethodError)
+	from amazonScraper.rb:14:in `block in getTitleAndRankForAllIsbns'
+	from amazonScraper.rb:13:in `each'
+	from amazonScraper.rb:13:in `getTitleAndRankForAllIsbns'
+	from amazonScraper.rb:41:in `<main>'
+
+------------------------------------------------------------------------------
+[Venkat 10/25/16 05:54 AM EDT]
+synopsis: please modularize code 
+
+details:
+Please don't leave comments in code.
+
+Modularize the code, please see email on the mailing list related to this.
+
+------------------------------------------------------------------------------
+[Venkat 10/24/16 04:18 AM MDT]
+synopsis: build failed 
+
+details:
+> ./build.sh 
+... `require': cannot load such file -- user_agent (LoadError)
+	from 
+	
+------------------------------------------------------------------------------

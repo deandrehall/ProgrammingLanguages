@@ -1,0 +1,24 @@
+Scala and JavaScript are quite different in nature, yet they have a few things in common. Identify some really powerful features that they have in common, explain what they provide, and how they are useful.
+
+The most powerful features that Scala and JavaScript have in
+common would be higher-order functions and lambda functions. Higher order functions allow
+functions to recieve other functions as paramaters and return a function
+as a result. Lambda functions allow you to create functions without
+names. An example of this in javascript woult be 
+
+var mult = function(x){
+    return function(y){
+        return x*y;
+    };
+};
+
+multVar = mult(2);
+multVar(4) == 8;
+
+in this example, the function mult returns a lambda function which
+multiplies the values x and y. By passing the value 2 to mult function,
+any values passed to multVar will be multiplied by 2. This is useful
+because it allows you to bind functions to a variable, and pass that
+variable to other functions, or map the values returned by the lambda.
+
+Total [10]: -1 In both we create constructors instead of classes though it appears as classes....

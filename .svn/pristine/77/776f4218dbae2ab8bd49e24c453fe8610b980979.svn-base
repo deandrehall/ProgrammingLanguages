@@ -1,0 +1,8 @@
+In a lot of languages a recursion runs into stack overflow errors for very large values. On the other hand, a tail call 
+optimized recursion does not. Why is that? How is that made possible?
+
+Recursion does not get the result of the calculation until you return from every recursive call. All these open functions in the stack causes the stack overflow. However, when you use tail call 
+optimized recursion, you reuse the current stack for each recursive call which is why there is not a stack overflow. 
+
+Total [10]: -5
+What's the magic, how does the language does this, what's really going on? We're not interested in how to write the code in this question, but to explain what's really going on to make this happen.

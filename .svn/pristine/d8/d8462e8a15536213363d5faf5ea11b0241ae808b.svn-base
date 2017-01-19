@@ -1,0 +1,55 @@
+Code.compiler_options(ignore_module_conflict: true)
+
+defmodule SCRAPPER do
+
+	def get_title_and_rank_for_all_isbns(isbns) do
+		Enum.map(isbns, fn(x) -> get_title_and_rank_for_isbn(x) end)
+	end
+
+	def get_title_and_rank_for_isbn(isbn) do
+		HTTPotion.start
+		site = "https://www.amazon.com/exec/obidos/ASIN/"
+		page = (HTTPotion.get site <> isbn ,[timeout: 360_000]).body
+		title = Floki.find(page, "#productTitle") |> Floki.text |> String.trim
+		rank = Floki.find(page, "#SalesRank") |> Floki.text(deep: false)
+		|> String.trim |> String.replace( ~r/[^0-9]/, "") |> String.to_integer()  
+  
+		%{:title => title, :isbn => isbn, :rank => rank} 
+	end
+
+	def read_file do
+		File.read("lib/isbnList.txt") |> Tuple.to_list |> Enum.drop(1)
+		|> List.first |> String.split("\r\n") |> List.delete("")
+	end
+
+	def print_report(titleAndRanks) do
+		IO.puts String.pad_trailing("Book Title", 90) <>
+		    String.pad_trailing("ISBN", 15) <> 
+            "Rank"
+		Enum.sort_by(titleAndRanks, &(&1.rank)) |> Enum.each(fn x ->
+			IO.puts String.pad_trailing(x[:title], 90) <>
+			String.pad_trailing(x[:isbn], 15) <>
+			Integer.to_string(x[:rank]) 
+		end)  
+	end
+
+	def get_title_and_rank_for_isbn_parallel(isbns) do
+	    isbns |> Enum.map(&Task.async(fn -> get_title_and_rank_for_isbn(&1) end))
+ 	        |> Enum.map(&Task.await(&1, 360000))
+	end
+
+    def compute_time (func) do
+        {time, _res} = :timer.tc fn -> print_report(func) end
+        IO.puts "Program completed in #{time/1000000} seconds.\n"
+    end
+
+end
+
+isbns = SCRAPPER.read_file
+SCRAPPER.compute_time(SCRAPPER.get_title_and_rank_for_all_isbns(isbns))
+IO.puts "hey"
+#{time, _res} = :timer.tc fn -> SCRAPPER.print_report(SCRAPPER.get_title_and_rank_for_all_isbns(isbns)) end
+#IO.puts "Program completed in #{time/1000000} seconds.\n"
+
+{time, _res} = :timer.tc fn -> SCRAPPER.print_report(SCRAPPER.get_title_and_rank_for_isbn_parallel(isbns)) end
+IO.puts "Program completed in #{time/1000000} seconds.\n"

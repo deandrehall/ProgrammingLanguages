@@ -1,0 +1,70 @@
+HW2: Due 11:59PM September 23rd
+
+In the questions below, assume a variable is immutable unless it is annotated with the word mutable. For example,
+
+let var1 = 10
+let mutable var2 = 4
+
+var1 can't be changed, var2 may be changed.
+
+Also, assume that all variables are passed by value, unless prefixed with a ref. That is, for example,
+
+aFunction(param1, ref param2) {
+  param1 = 15
+  param2 = 42
+}            
+
+let mutable var3 = 4
+let mutable var4 = 4
+aFunction(var3, var4)
+
+var3 did not change, a copy of it was sent to aFunction. On the other hand, var4 is now 42 after the call.
+
+Given the above details, answer these questions.
+
+1. What is a pure function?
+
+A pure function will always return a same result, given the same parameter, as well as not producing any side effects.  A function produces side effects when it modifies a variable or otherwise produces an effect outside the scope of the function. Some examples of side effects would be outputting data to the display or mutating a variable outside the scope of the function. The pure function also should not depend on any external mutable states. If a variable outside the pure function is modified, it should not have an effect on the output of the pure function at any time.
+
+2. What are the reasons that functional programming emphasizes that functions be pure?
+
+Functional programming offers a few capabilities that relies on functions being pure. One capability is allowing for lazy evaluations, which allows for infinite lists to be possible and makes expressions more efficient by evaluating expressions when it is only needed. Another capability is allowing for memoization, which allows for optimization of runtimes. Functional programming also allows for cleaner and safer code, since there are no mutations going on, there are less moving parts in the code which makes it easier to track code and less buggy. If the functions are not pure functions, then the key capabilities of functional programming will not be possible.
+
+3. Is the following a pure function? Give reasons for your answer.
+
+someFunction(input1, input2) {
+  return input1 + input2
+}
+
+This is a pure function. input1 and input2 are not being changed and only returns the value of the expression input1 + input2.
+
+4. Is the following a pure function? Give reasons for your answer.
+
+someFunction(input1, input2) {
+  let mutable result = input1
+  result = result + input2
+  return result
+}
+
+This is a pure function. Even though the variable "result" is created and modified, the function essentially returns the value of the expression (input1 + input2). "result" is destroyed after exiting the function. 
+
+5. Is the following a pure function? Give reasons for your answer.
+
+someFunction(ref input1, ref input2) {
+  input2 = input1 + input2
+  return input2
+}
+
+This is not a pure function. The function has the side effect of changing the value inside the variable input2 by reference. This mutation may have unintended effects in other parts of the program where input2 is used. The variable change inside the function adds another moving part in the code. This makes it harder to track what is happening in the program since the variable is being changed every time the function is called, thus introducing the possibility of more bugs in the program. An example of the variable input2 causing bugs would be if someFunction() is called from another function. The function that calls someFunction() will be unable to predict when input2 will be mutated, which would lead to bugs.
+
+6. Is the following a pure function? Give reasons for your answer.
+
+someFunction(ref input1, ref input2) {
+  return input1 + input2
+}
+
+This is not a pure function. Although the value of the expression (input1 + input2) is only being returned and not being mutated in the function, this is not enough to assure that the function is pure.  A pure function also should not depend on any external mutable states. This function with its variables being passed by reference, we do not know for certain if the variables are going to be mutated outside the function or not. So it might not always produce the same result for the input.
+
+Total [10]: -1
+
+5. is rather weak due to longwinded response. All we have to say is that the caller may change input1 or input2 while someFunction is running. That makes the result of someFunction unpredicatable. Also, if the caller uses input2 while someFunction is running, we're in trouble.

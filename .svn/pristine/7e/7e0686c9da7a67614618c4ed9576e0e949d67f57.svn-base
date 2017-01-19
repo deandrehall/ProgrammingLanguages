@@ -1,0 +1,2 @@
+In a language of your choice, without using any mutability and without using recursion, implement concisely a function that will accept a list of integers  and return the sum of squares of the numbers. For example, if the input is a list 1, 2, 3, 4, the result is 30.  Write your code in a separate file with proper extension. Write a build file to compile (if necessary) and run the program.
+

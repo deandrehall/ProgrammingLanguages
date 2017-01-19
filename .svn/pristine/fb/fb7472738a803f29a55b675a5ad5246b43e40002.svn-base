@@ -1,0 +1,37 @@
+[Venkat 09/01/16 06:19 AM MDT]
+synopsis: good 
+
+details:      
+You're done.
+
+------------------------------------------------------------------------------
+[Venkat 08/31/16 06:08 AM MDT]
+synopsis: revisit the benefit stated 
+
+details:
+"The benefit of statements is that they allow for the manipulation of variables during run time. " This can't be a benefit. Our intention rarely is to manipulate variables, that is often a consequence than an intent. May be rework this paragraph to say what the statement is really for (to perform action) and since it does not return any results, it often leads to the mutation of variables.
+
+------------------------------------------------------------------------------
+[Venkat 08/30/16 06:40 AM MDT]
+synopsis: please move forward 
+
+details:
+The first paragraph tells what an expression is and give example. Good.
+The second paragraph tells what a statement is and gives example. Good.
+
+Now, discuss the benefits of each, the pros and cons. Draw any conclusions, recommendations. Relate to what different languages do, some may treat something as a statement while another language may treat it as an expression.
+
+------------------------------------------------------------------------------
+[Venkat 08/28/16 07:16 AM CDT]
+synopsis: Expand, let's give details 
+
+details:
+Do they have to be reserved keywords for statements?
+Let's shorten the definition to bring out the essence, there are words that do not really contribute to the overall understanding. Let's get rid of spurious words.
+
+"Examples of simple statements would be:"
+Are 'if' and 'for' always statements irrespective of languages?
+
+Are there more details. What else can we say about these? When would we want to use one over the other. What about languages and how they may treat or favor one vs. the other.
+
+------------------------------------------------------------------------------

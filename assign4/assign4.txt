@@ -1,0 +1,29 @@
+Assign 4 Due 11:59PM November 18
+
+Reimplement the problem we looked at in assignment 3, but this time with a language that does not permit any mutability. Implement two solutions, one that is sequential and one that runs the code concurrent/parallel.
+
+Once you complete the coding answer the following questions:
+
+1. In what way, structurally, the code is different from the solution in assignment 3?
+
+Our code for assignment 4 is very similar to the code from assignment 3. We essentially used assignment 3 as the blueprint for assignment 4 by implementing 
+The same functions that we used when we did the assignment in ruby, and then figuring out how to do the same thing using elixir.
+
+2. In what way, behavior wise, the code is different from the solution in assignment 3?
+
+The main difference between our code for assignment 3 and assignment 4 was that during assignment 4 we used piping. Piping was very helpful during assignment 4 because it allowed us to transform data values without mutation. We used anonymous functions to reduce the amount of code we had to write by passing functions to other functions and using mapping to collect the values. When it comes to differences in time, for assignment 3 sequential time it was 15-20 seconds and for assignment 4 it was 14-16 seconds. However, for assignment 3 concurrency, we are getting 2.8-5 seconds for both functions and 5-6 seconds for assignment 4 concurrent. So, the times for assignment 3 seems to be better especially for the concurrent functions.
+
+3. What are some of your observations and things you learned from designing and implementing assignment 3 and assignment 4? 
+
+The thing we learned the most during this assignment was how to implement functional style code. Even though we had done functional style programming in other assignments before this, it really seemed to "click" while working on this assignment. Working in elixir almost seemed to be easier than ruby even though we weren't as familiar with it.
+
+
+Total [100]: 100
+The performance of concurrent was 2+ seconds compared to 20+ seconds for sequential (back in the US when running this, may be a much better network than one at that European hotel).
+                     
+Program works and displays result in the desired format [20]:
+Sequential solution: [30]:
+Concurrent solution: [30]:
+Code quality, solution relevant to language, etc. [10]:
+Answers to questions in assign4.txt [10]:
+

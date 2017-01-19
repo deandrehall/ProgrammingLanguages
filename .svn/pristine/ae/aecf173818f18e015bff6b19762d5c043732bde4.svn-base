@@ -1,0 +1,19 @@
+We discussed C#, Clojure, Erlang, F#, Groovy, Haskell, Java, Ruby, Scala, and 
+JavaScript in this course. What are some of the ways in which you'd classify
+these languages (there is more than one way). Explain each classification and
+group these languages appropriately in each classification.
+
+Java, C# are statically typed language, strong typed, and imperative style language.
+
+ 
+Erlang, Clojure are dynamically typed languages, strongly typed, and a functional style languages. 
+
+Scala, F# are statically typed languages, strongly typed, and supports both imperative and functional style programming.
+
+Groovy is a static and dynamically typed language, strongly typed, and supports both imperative and functional style programming.
+
+Haskell is a static typed language, strong typed, and is a purely functional programming language. 
+
+Ruby is a dynamically typed language, strong typed, and supports both impassive and functional style programming.
+
+JavaScript is dynamically typed, weakly typed or untyped, and supports both supports both  and functional style programming.
