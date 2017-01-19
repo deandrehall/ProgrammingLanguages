@@ -1,6 +1,0 @@
-{application,factorial,
-             [{registered,[]},
-              {description,"factorial"},
-              {vsn,"0.1.0"},
-              {modules,['Elixir.Factorial','Elixir.Mix.Tasks.Factorial']},
-              {applications,[kernel,stdlib,elixir,logger]}]}.

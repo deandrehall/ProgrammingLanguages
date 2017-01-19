@@ -1,7 +1,0 @@
-
---This line, and those below, will be ignored--
-
-M    assign4/assign4.txt
-M    assign4/lib/scrapper.ex
-M    assign4/mix.exs
-M    assign4/mix.lock

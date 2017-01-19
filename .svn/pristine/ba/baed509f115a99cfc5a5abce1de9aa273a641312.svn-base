@@ -1,9 +1,0 @@
-Given a position n, the Fibonacci number at that position is defined using recursion as:
-
-1 if n < 2
-fib(n - 1) + fib(n - 2) for n >= 2
-
-Using a language of your choice, implement the fibonacci function for a given n, using tail call recursion (not iteration), that is the call to the function should be at the last position in the recursion.
-Also, avoid mutating any (global) state/variables to achieve this solution.
-
-Save the code into a file with the proper extension. Provide a simple build file that will compile (if necessary) and run your code for some sample values of n.

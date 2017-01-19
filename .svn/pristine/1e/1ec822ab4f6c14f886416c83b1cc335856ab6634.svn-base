@@ -1,7 +1,0 @@
-Suppose we have an immutable list with a 100 elements. We want to create a new 
-list with one new/additional element in the list. Explain how languages that 
-promote immutability handle this and what's the cost (time complexity and 
-space complexity) of creating the new list.
-
-Immutable languages handles this with persistent data structure. For lists, you use the head of immutable list 100 and point the new list with the new element to the head of the old list. The head of the immutable list with 100 elements is still pointing to those elements and the new list with the new value added is created with the old list still intact, The time complexity and space complexity is O(1);
-

@@ -1,3 +1,0 @@
-"To serve as a host language for internal DSLs, all it needs is fluency (low  ceremony) where things like ; and () are optional." Discuss either in favor or  against this statement. Give examples of languages in this context. You can provide the entire answer for this question in this file.
-
-To serve as a host language for internal DSls, while it does need fluency(low ceremony), it also needs Metaprogramming. Metaprogramming gives it the flexibility to be dynamic. 
